@@ -10,10 +10,10 @@ namespace Selection
     {
         static void Main(string[] args)
         {
-          
+
             string pizzaTopping = Input("What pizza toppings would you like? ");
 
-            switch(pizzaTopping)
+            switch(pizzaTopping.ToLower())
             {
                 case "ham":
                 case "pepperoni":
@@ -29,10 +29,29 @@ namespace Selection
                     Console.WriteLine("Unknown pizza topping!");
                     break;
             }
+
+            string music = Input("What type of music do you like? ");
+            switch(music.ToLower())
+            {
+                case "jazz":
+                    Console.WriteLine("So... you like jazz?");
+                    break;
+                default:
+                    Console.WriteLine("Nice!");
+                    break;
+                
+                
+
+            }
         
         
         }
 
+        /// <summary>
+        /// Ask a question
+        /// </summary>
+        /// <param name="question"> The question to ask </param>
+        /// <returns> The answer to the question </returns>
         private static string Input(string question)
         {
             Console.Write(question);
