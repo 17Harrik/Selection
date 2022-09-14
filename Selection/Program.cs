@@ -18,12 +18,12 @@ namespace Selection
                 case "ham":
                 case "pepperoni":
                 case "chicken":
-                    Console.WriteLine("Not suitable for vegetarians");
+                    Print("Not suitable for vegetarians", ConsoleColor.Green);
                     break;
                 case "vegetables":
                 case "cheese and tomato":
                 case "margherita":
-                    Console.WriteLine("Suitable for vegetarians");
+                    Print("Suitable for vegetarians", ConsoleColor.Red);
                     break;
                 default:
                     Console.WriteLine("Unknown pizza topping!");
@@ -31,7 +31,7 @@ namespace Selection
             }
 
             string music = Input("What type of music do you like? ");
-            switch(music.ToLower())
+            switch (music.ToLower())
             {
                 case "jazz":
                     Console.WriteLine("So... you like jazz?");
@@ -39,12 +39,22 @@ namespace Selection
                 default:
                     Console.WriteLine("Nice!");
                     break;
-                
-                
-
             }
         
         
+        }
+        
+        /// <summary>
+        ///  Displays a message in colour on the console
+        /// </summary>
+        /// <param name="output"></param>
+        /// <param name="color"></param>
+        private static void Print(string output, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(output);
+
+            Console.ResetColor();
         }
 
         /// <summary>
