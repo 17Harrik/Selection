@@ -9,14 +9,9 @@ namespace Selection
     class Program
     {
         static void Main(string[] args)
-        { 
-            Console.Write("What pizza topping would you like? ");
-            string pizzaTopping = Console.ReadLine();
-
-            if (pizzaTopping.ToLower() == "ham")
-            {
-                Console.WriteLine("Not suitable for vegetarians");
-            }
+        {
+          
+            string pizzaTopping = Input("What pizza toppings would you like? ");
 
             switch(pizzaTopping)
             {
@@ -36,6 +31,12 @@ namespace Selection
             }
         
         
+        }
+
+        private static string Input(string question)
+        {
+            Console.Write(question);
+            return Console.ReadLine();
         }
     }
 }
